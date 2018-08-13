@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="提交"/>
+		<script>
+			$(function(){
+				$('#btn').click(function(){
+					$.ajax({
+						type:"GET",
+						url:"www.baidu.com",
+						data:'name:xzc',       //传递的数据
+						success:function(){   //成功
+							
+						},
+						error:function(){      //失败
+							
+						}
+					});
+				})
+			})
+		</script>
+	</body>
+</html>

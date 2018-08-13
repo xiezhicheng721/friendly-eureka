@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="button" id="ipt" value="提交"/>
+		<script>
+			var oipt = document.getElementById("ipt") 
+			 oipt.onclick = function(){
+			 	//1.定义变量
+				var xhr = null;
+				//2.做兼容
+				try{
+                    xhr = new XMlHttpRequest()                          
+				}catch(e){
+					xhr = new ActiveXObject('Microsoft.XMLHTTP')  //用于兼容IE低版本
+				}
+				//3.输入网址 open方式可以指定发送方式和发送数据的地址以及是否异同步
+				// true 表示用异步的方式发送请求
+				xhr.open('get','http://www.baidu.com',true) 
+				//4.送数据
+				xhr.send();		
+				//5.监听数据， 监听的是xhr.readyState状态
+				xhr.onreadystatechange = function(ev){
+					if (xhr.readyState === 4){
+						//  4表示内容解析完成,可以使用数据
+						if (xhr.state>=200 && xhr.state<300 || xhr.state===304) {
+					    //  state 表示状态码200-300之间正常 304也表示正常
+					    alert('请求成功')
+						} else{
+						alert('请求失败')	
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

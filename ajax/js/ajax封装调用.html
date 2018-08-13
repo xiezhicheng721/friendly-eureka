@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="ajax封装方法.js" ></script>
+	</head>
+	<body>
+		<input type="button" id="btn"/>
+		<script>
+			var Btn = document.getElementById("btn");
+			Btn.onclick = function(){
+				ajax('地址',function(xhr){执行代码},function(xhr){执行代码},3000)
+			}
+			/* 1：引入封装所在文件
+			   2：点击执行封装函数
+			   3：输入所要发送地址，成功或失败的执行函数
+			   4：超时中断请求
+			 */
+			
+		</script>
+	</body>
+</html>
