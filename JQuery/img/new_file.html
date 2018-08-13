@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../jquery-2.1.0.js" ></script>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			.box{
+				width: 150px; height: 150px;background: red;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button>展开</button>
+		<div class="box"></div>
+		<script>
+			$(function(){
+				$('button').eq(0).click(function(){
+					$('.box').slideDown(1000)
+				})
+			})
+		</script>
+    </body>
+</html>

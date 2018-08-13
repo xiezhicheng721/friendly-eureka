@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			#box{
+				width: 300px; height: 300px;border: 1px solid red;
+				background: #FF0000;position: relative;
+			}
+			#box2{
+				width: 150px; height: 150px; border: 1 solid blue;
+				position: absolute;background: #0000FF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box2"></div>
+		</div>
+		<script>
+			$(function(){
+//				$('#box').click(function (){
+//					alert("123")
+//				})
+//				$('#box2').click(function (){
+//					alert("box2")
+////					return false     //在子元素里面添加return 阻止冒泡事件
+//				})
+//				$('#box2').triggerHandler('click')   //trigger自动触发会触发父元素冒泡事件
+
+                   //命名空间、方面知道是谁绑定的事件
+                   $('#box2').on('click.xzc',function(){ //事件后面加上  .名称  不会影响事件执行
+                   	alert("1")
+                   })
+                   $('#box2').triggerHandler('click.xzc')
+			})
+		</script>
+	</body>
+</html>

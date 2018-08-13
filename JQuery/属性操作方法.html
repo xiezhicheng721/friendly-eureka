@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+	<button>(attr)添加</button>
+	<button>(attr)获取</button>
+	<button>(removeAttr)删除</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		$(function(){
+			//在每个div中添加属性dato-text=nodeing_index
+			//index为添加属性的下标
+			//一般添加属性写法attr('属性','值')
+			$('button:eq(0)').click(function(){
+				$("div").attr('dato-text',function(index){
+					return 'nodeing_'+index
+				})	
+			});
+			//获取添加后的属性  
+			$('button:eq(1)').click(function(){
+				//默认获取第一个div的属性
+//				var a = $('div').attr("dato-text")
+//				alert(a)
+                //用each循坏获得所有div
+                //time  为项，表示每个div
+                $('div').each(function(index,tiem){
+                	var a =$(tiem).attr
+                	console.log(a)
+                })
+			});
+			$('button:eq(2)').click(function(){
+				$('div').removeAttr("dato-text")
+			})
+		})
+	</script>
+	</body>
+</html>

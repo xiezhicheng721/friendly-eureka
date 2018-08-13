@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			div{
+				margin-bottom:10px ;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<script>
+			$(function(){
+				//方法一：单个设置
+				$('#box1').css('width','100px')
+				$('#box1').css('height','100px')
+				$('#box1').css('background','red')
+				//方法二：链式设置,一般超过3个不建议用链式
+				$('#box2').css('width','100px').css('height','100px').css('background','#0033FF')
+				//方法三：批量设置 ，需要在css括号中加上{}来添加
+				//项目开发中推荐使用批量设置方法
+				$('#box3').css({
+					width: "100px",
+					height: "100px",
+					background: "red"
+				})
+				//获取CSS方法 如下：获取box1 的宽度
+				console.log($('#box1').css('width'))
+			})
+			
+		</script>
+   </body>
+</html>

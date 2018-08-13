@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			#box{
+				width: 150px;height: 100px;border: 1px solid silver;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+//			$(function(){
+				//mouseover鼠标移入    与原生JS相比前面少了on				
+//				$('#box').mouseover(function(){
+//					$('#box').css('background','red')
+//				})
+				//鼠标移出
+//				$('#box').mouseout(function(){
+//					$('#box').css('background','#0033FF')
+//				})
+//			})
+                       $(function(){
+                       	$('#box').on({        //相当于on({事件，事件，事件})逗号不能少
+                       		"click":function(){
+                       			$(this).css('background','red')
+                       		},
+                       		"mouseover":function(){
+                       			alert("鼠标移入")
+                       		},
+                       		"mouseout":function() {
+                       		   alert("鼠标移出")
+                       		}
+                       })
+                       })
+		</script>
+	</body>
+</html>

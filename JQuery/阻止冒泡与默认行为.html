@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			#box{
+				width: 100px; height: 100px;background-color: #0033FF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+//			$(function(){
+//				$(document).click(function(){
+//					alert(1)
+//				})
+//				$('#box').click(function(){
+//					alert(2)
+//					event.stopPropagation() //阻止document跳出弹窗
+////					return false     也可用返回false代替阻止冒泡
+//				})
+//			})  
+                      //阻止浏览器的默认行为
+                 $(function(){
+                 	$(document).contextmenu(function(){
+                 		alert("烦")
+                 		event.preventDefault()   //阻止流浪器原本的右键窗口出现
+                 		//return  false  也可用这个代替
+                 	})
+                 })
+		</script>
+	</body>
+</html>

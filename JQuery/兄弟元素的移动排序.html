@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			.btn{
+				border-top: 10px solid #03F;
+			    border-left: 10px solid transparent;
+			    border-right: 10px solid transparent;
+			}
+			.otop{
+				border-bottom: 10px solid #03F;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><button><div class="btn"></div></button>标题1<button><div class="otop"></div></button></li>
+			<li><button><div class="btn"></div></button>标题2<button><div class="otop"></div></button></li>
+			<li><button><div class="btn"></div></button>标题3<button><div class="otop"></div></button></li>
+		</ul>
+		<script>
+			$(function(){
+				$('.btn').click(function(){
+					//定义获取点击按钮的父元素li      closest表示查找父元素
+					var $nowli = $(this).closest('li')
+					//定义获取点击按钮父元素的兄弟元素                   next表示查找下一个兄弟元素
+					var $nextli = $(this).closest('li').next()
+					if($nextli.length === 0){   //判断显示提示框
+						alert('下面没有元素了')
+					}       
+					$nowli.insertAfter($nextli) //后方添加$nextli
+				})
+				$('.otop').click(function(){
+					var $nowli = $(this).closest('li')
+					//prev()表示查找上一个兄弟元素
+					var $prevli=$(this).closest('li').prev()
+					if($prevli.length === 0){
+						alert('上面没有元素了')
+					}
+					$nowli.insertBefore($prevli)  //前方添加
+				})
+			})
+		</script>
+	</body>
+</html>

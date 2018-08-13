@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			var oBox = document.getElementById("box")
+//			console.log(oBox)  原生
+//			console.log($(oBox))  转换 只需把原生对象放到$函数括号里面
+
+			console.log($("#box").get(0))
+	//jQuery 转成原生 -->在后面使用.get(下标)  下标是当有相同对象时，你所要转换的对象的下标
+		</script> 
+	</body>
+</html>

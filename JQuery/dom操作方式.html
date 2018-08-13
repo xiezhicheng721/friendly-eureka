@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<button>添加</button>
+		<input type="text" id="ipt"/>
+		<ul id="oul">
+			<li>dom的操作方法</li>
+		</ul>
+		<script>
+			//输入内容点击按钮生成新的li项并显示内容
+			$(function(){
+				$('button:eq(0)').click(function(){
+					var Oli=$('<li>'+$('#ipt').val()+'</li>')
+						//在原有元素的下方添加
+//					$('#oul').append(Oli)  //append  在...添加元素内容 （在原内容的下方）
+//                  Oli.appendTo($('#oul')) //appendTo  元素内容在...内添加（在下方）
+//                    $('#oul').prepend(Oli)//prepend 在原有元素的上方添加
+                      Oli.prependTo("#oul")
+				})
+			})
+		</script>
+	</body>
+</html>

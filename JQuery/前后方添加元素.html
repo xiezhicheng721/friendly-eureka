@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<button>添加</button>
+		<script>
+			$(function(){
+				$('button').click(function(){
+					var obtn=$('<button>xxx</button>')
+//					$(this).after(obtn)   
+//					obtn.insertAfter($(this)) //2个用法一样在原本元素后方添加元素
+					$(this).before(obtn) //与insertAfter用法一样
+				})
+			})
+		</script>
+	</body>
+</html>

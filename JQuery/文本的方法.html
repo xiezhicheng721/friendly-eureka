@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	<style>
+		#box{
+			width: 200px; height: 200px;border: 1px solid #FA8072;
+		}
+	</style>
+	</head>
+	<body>
+		<button>html()</button>
+		<button>text()</button>
+		<button>val()</button>
+		<input type="text" id="text"/>
+		<div id="box"></div>
+		<script>
+			$(function(){
+				$('button:eq(0)').click(function(){
+					$('#box').html('<h1>我是HTML</h1>') //与原生innerHTML用法一样
+				})
+				$('button:eq(1)').click(function(){
+					$('#box').text('<h1>我是text</h1>')
+				}) //与innerText一样，标签不会被解析
+				$('button:eq(2)').click(function(){
+					var $value = $('#text').val()  //与value一样
+					$('#box').html($value)
+				})
+			})
+		</script>
+	</body>
+</html>

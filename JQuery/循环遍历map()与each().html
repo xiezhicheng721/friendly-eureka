@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<script>
+			var arr = [1,2,3,4,5]
+			/*  循环中:
+			 * 第一个参数：要遍历的数组
+			     第二个参数：执行函数
+			     执行函数中：
+			     第一个参数:遍历的元素
+			    第二个参数：遍历到的索引
+			*/
+		$.map(arr,function(value,index){
+			console.log('map结果:',value,index)
+		})
+			$.each(arr,function(value,index){
+				console.log('each结果:',value,index)
+			})
+			/*区别:
+			 * 一、each默认的返回值就是遍历谁返回谁
+			 *     map默认的返回值是一个空数组
+			 *二、
+			 *     each不支持在回调函数中对遍历的数组进行处理
+			 *     map在回调函数中可以通过return对遍历的数组进行处理
+			 */
+		</script>
+	</body>
+</html>

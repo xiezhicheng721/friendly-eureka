@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			select{
+				width: 100px; height: 150px;border: 1px solid silver;
+			}
+		</style>
+	</head>
+	<body>
+		<select multiple="multiple"  id="sell">
+			<option>苹果</option>
+			<option>香蕉</option>
+			<option>雪梨</option>
+		</select>
+		<button>向左</button>
+		<button>全向左</button>
+		<button>向右</button>
+		<button>全向右</button>
+		<select multiple="multiple" id="sell2">			
+		</select>
+		<script>
+			//需求 ：点击按钮移动元素
+			$(function(){
+				$('button:eq(0)').click(function(){  //把选中的向右移动
+					//获取id=sell的option项循环    index返回的是下标
+					$('#sell option').each(function(index,tiem){
+						//判断:当option选中时     selected表示选中
+						if($(tiem).prop('selected')){
+							//把选中的option往右移动  appendTo表示添加
+							$(tiem).appendTo('#sell2')
+						}
+					})
+				})           //全向右
+				$('button:eq(1)').click(function(){   
+					$('#sell option').each(function(index,tiem){
+						$(tiem).appendTo('#sell2')
+					})
+				})         //向左与向右一样   把id改过来即可
+			})
+		</script>
+	</body>
+</html>

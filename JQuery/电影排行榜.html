@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			.box{
+				width: 200px;
+				height: 400px;
+				border:1px solid #000;
+				margin:0 auto;		
+			}
+			.box>h3{
+				color: #FA8072;
+				text-align: center;
+				line-height: 35px;
+			}
+			.box>ul{
+				list-style-type: none;
+			}
+			.box li{
+				padding: 5px 10px;
+				color: cornflowerblue;
+				cursor: pointer;
+				border-bottom: 1px  dashed #C0C0C0;
+			}
+			.box span{
+				display: inline-block;
+				font-weight: bold;
+				width: 20px; height: 20px;
+				line-height: 20px;
+				text-align: center;
+				border-radius:50% ;
+				margin-right: 5px;
+			}
+			ul>li:nth-child(-n+3) span{
+				background: #FA8072;
+			}
+			.box-img{
+				overflow: hidden;/*溢出隐藏*/
+				margin-top: 5px;
+				display: none;
+				color: #000000;
+			}
+			.box-img img{
+				width: 60px; height: 80px;float: left;
+			}
+			.box-img p{
+				width: 100px; height: 10
+				0px; float: right;
+			}
+			.cblock .box-img{      /*用于脚本添加的类*/
+				display: block;
+			}
+					</style>
+	</head>
+	<body>
+		<div class="box">
+			<h3>电影排行榜</h3>
+			<ul>
+				<li><span>1</span>3D肉蒲团
+				        <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div>
+				</li>
+				<li><span>2</span>蜜桃成熟时
+				         <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div> 
+				</li>
+				<li><span>3</span>金梅瓶
+				        <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div>
+				</li>
+				<li><span>4</span>一路向西
+				            <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div>
+				</li>
+				<li><span>5</span>喜爱夜蒲
+				            <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div>
+				</li>
+				<li><span>6</span>香蕉成熟时
+				            <div class="box-img">
+				        	<img src='img/37d3d539b6003af3d45e8e48322ac65c1038b636.jpg'/>
+				        	<p>这是一部是男人都喜欢的电影，里面内容具有教育意义.</p>
+				        </div>
+				</li>
+			</ul>
+		</div>
+		<script>
+			$(function(){
+				$('li').mouseenter(function(){
+					$(this).addClass('cblock')  //添加一个class名为cblock的类
+				})
+				$('li').mouseleave(function(){
+					$(this).removeClass('cblock') //删除类
+				})
+			})
+		</script>
+	</body>
+</html>

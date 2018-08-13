@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<input type="text" />
+		<button>确定</button>
+		<ul>
+			<li>111</li>
+			<li>222</li>
+			<li>333</li>
+		</ul>
+		<script>
+			//需求:1.输入内容，添加新的li项   2.点击li项，使点击的一项字体变色
+			$(function(){
+				//添加li项
+				$('button').click(function(){
+					var $li = $('<li>'+$('input').val()+'</li>')
+					$('ul').append($li)    //或者append('<li>'+内容+'</li>')
+				})
+				//委托父元素在父元素ul中绑定事件on('点击','li','执行事件')
+				$('ul').on('click','li',function(){
+					$(this).css('color','red') //this谁点击就指向谁，若设置li则所有li
+				})
+			})
+		</script>
+	</body>
+</html>

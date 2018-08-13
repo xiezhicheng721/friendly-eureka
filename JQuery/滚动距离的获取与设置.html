@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>222
+		<style>
+			*{
+				margin: 0; padding: 0;
+			}
+			#box{
+				width: 200px; height: 200px;
+				border: 1px solid red;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>我<br />是<br />内<br />容<br />我<br />是<br />内<br />容<br />我<br />是<br />
+			<br /><br /><br /><br /><br />内容我是内容
+			<br /><br /><br />我是内容我是内容我是内容我
+			<br /><br /><br />是内容我是内<br /><br /><br />容我是内容</p>
+		</div>
+		<button>获取</button>
+		<button>设置</button>
+		<script>
+			$(function(){
+				$('button:eq(0)').click(function(){
+					console.log($('#box').scrollTop())  //点击获取滚动距离
+				})
+				$('button:eq(1)').click(function(){
+					$('#box').scrollTop(100)  //点击设置滚动距离，括号直接写入数字
+				})
+			})
+		</script>
+	</body>
+</html>

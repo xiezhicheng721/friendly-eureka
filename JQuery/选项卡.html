@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+		<style>
+			#wrad{width: 300px; margin: 50px auto;font-size: 0;}
+			#wrad button{width: 100px; height: 30px; border: 1px solid silver;}
+			#wrad button:nth-of-type(1){background-color: red;}
+			#wrad div{width: 298px; height: 200px;border: 1px solid silver;
+			display: none; font-size: 20px;}
+			#wrad div:nth-of-type(1){display: block;}
+		</style>
+	</head>
+	<body>
+		<div id="wrad">
+		 <button>but1</button>
+		 <button>but2</button>
+		 <button>but3</button>
+		 <div>div1</div>
+		 <div>div2</div>
+		 <div>div3</div>
+		</div>
+		<script>
+			$(function(){
+				$('button').click(function(){   //获取button 设置点击事件
+					var $index=$(this).index()  //获取button 的下标
+					//this表示点击的button   
+					//siblings('button')表示获取button的所有的button兄弟元素，不指定button就包括了div
+					$(this).css('background','red').siblings('button').css('background','white')
+					//绑定id="#wrsd"下的div然后获取点击的button的下标设置为显示，他的div兄弟元素为隐藏
+					//show()是jQuery中用于代替css('display','block')   hide()代表隐藏
+					$('#wrad div').eq($(this).index()).show().siblings('div').hide()
+				})
+			})
+		</script>
+	</body>
+</html>

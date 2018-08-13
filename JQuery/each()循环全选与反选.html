@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="jquery-2.1.0.js" ></script>
+	</head>
+	<body>
+		<button>全选</button>
+		<button>反选</button>
+		<button>不选</button><br />
+		<input type="checkbox"/><br />
+		<input type="checkbox"/><br />
+		<input type="checkbox"/>
+		<script>
+			$(function(){
+				//全选  在input中添加checked='true'则为默认选中
+				$('button:eq(0)').click(function(){
+					$('input').prop('checked','true') //prop()设置或获取元素属性 
+				})
+				 //利用删除checked莱取消全选
+				$('button:eq(2)').click(function(){
+					$('input').removeAttr('checked') // removeAttr  删除属性
+				})
+				//反选:选中的变为没选中，没选中的变为选中
+				$('button:eq(1)').click(function(){
+					//利用循环each获取每个input
+					$('input').each(function(index,value){
+						//循环用map()效果一样
+						//$(item).prop('checked')可以获得原始状态
+						//第一个参数为索引，第二个参数为元素
+					$(value).prop('checked', !$(value).prop('checked'))	
+					})    //prop获取或设置元素
+				})
+			})
+		</script>
+	</body>
+</html>
